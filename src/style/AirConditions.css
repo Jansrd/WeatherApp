@@ -1,0 +1,43 @@
+.air__conditions {
+    width: 20%;
+    height: 80px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+}
+
+.air__conditions__content {
+    width: 100px;
+    height: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 20px;
+}
+
+.air__condition__title {
+    display: flex;
+    align-items: center;
+    color: rgb(166, 166, 166);
+}
+
+.air__condition__title p {
+    font-size: 20px;
+}
+
+.air__condition__title h5 {
+    margin-top: 20px;
+    margin-left: 7px;
+}
+
+.air__condition__parametar {
+    display: flex;
+    margin-top: -40px;
+}
+
+.air__condition__parametar {
+    font-size: 15px;
+}
+
+.air__condition__parametar p {
+    font-size: 20px;
+}
