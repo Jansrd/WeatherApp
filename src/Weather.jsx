@@ -14,13 +14,11 @@ import { RiMistLine } from "react-icons/ri";
 import { IoPartlySunnyOutline } from "react-icons/io5";
 import { WEATHER_API_ULR } from './api';
 import { WEATHER_API_KEY } from './api';
-import { MdClear } from "react-icons/md";
 
 const Weather = () => {
     const [showButton, setShowButton] = useState('none')
-    const [border, setBorder] = useState('none')
-    const [color, setColor] = useState('black')
     const [input, setInput] = useState('')
+    const [color, setColor] = useState('black')
     const [data, setData] = useState({
         temperature: '',
         location: '',
@@ -111,22 +109,19 @@ const Weather = () => {
                 })
                 .catch(err => {
                     if (err.response.status === 404) {
-                        setInput("Invalid input")
-                        setBorder(border => border = '1px solid red')
-                        setColor(color => color = 'red')
+                        setInput('*Invalid input*')
+                        setColor('red')
+                        setTimeout(() => {
+                            setInput('')
+                            setColor('black')
+                        }, 800)
                     } else {
                         setInput(input)
                     }
                 })
             setShowButton(showButton => showButton = 'block')
+            setInput('')
         }
-    }
-
-    const clearSearch = () => {
-        setInput('')
-        setShowButton(showButton => showButton = 'none')
-        setBorder(border => border = 'none')
-        setColor(color => color = 'black')
     }
 
     return (
@@ -137,12 +132,12 @@ const Weather = () => {
                     <div className="weather__search">
                         <input
                             type="text"
-                            style={{ border: border, color: color }}
+                            style={{ color: color }}
+                            pattern='[a-zA-Z ]*'
                             value={input}
                             onChange={(e) => setInput(e.target.value)}
                             placeholder='Search'
                         />
-                        <button onClick={clearSearch} style={{ display: showButton }}><MdClear /></button>
                         <button onClick={handleSearch}>
                             <BiSearchAlt2 />
                         </button>

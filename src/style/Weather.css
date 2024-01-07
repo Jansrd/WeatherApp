@@ -40,7 +40,27 @@
     box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.2);
     padding-left: 20px;
     border-radius: 10px;
+}
+
+.weather__search input:invalid {
+    animation: shake 300ms;
     border: 1px solid red;
+}
+
+@keyframes shake {
+
+    0%,
+    100% {
+        transform: translate(0);
+    }
+
+    25% {
+        transform: translate(0.25rem);
+    }
+
+    75% {
+        transform: translate(-0.25rem);
+    }
 }
 
 .weather__search button {
