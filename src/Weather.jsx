@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import axios from 'axios';
 import './style/Weather.css'
 import { BiSearchAlt2 } from "react-icons/bi";
@@ -12,22 +12,68 @@ import { IoRainyOutline } from "react-icons/io5";
 import { BsCloudDrizzle } from "react-icons/bs";
 import { RiMistLine } from "react-icons/ri";
 import { IoPartlySunnyOutline } from "react-icons/io5";
+import { WEATHER_API_ULR } from './api';
+import { WEATHER_API_KEY } from './api';
+import { MdClear } from "react-icons/md";
 
 const Weather = () => {
+    const [showButton, setShowButton] = useState('none')
+    const [border, setBorder] = useState('none')
+    const [color, setColor] = useState('black')
     const [input, setInput] = useState('')
     const [data, setData] = useState({
-        temperature: 5,
-        location: 'Belgrade',
-        feels_like: 4,
-        temp_min: 3,
-        wind: 2,
-        humidity: 10,
-        icon: <IoPartlySunnyOutline />
+        temperature: '',
+        location: '',
+        feels_like: '',
+        temp_min: '',
+        wind: '',
+        humidity: '',
+        icon: ''
     })
+
+    useEffect(() => {
+        const apiUrl = `${WEATHER_API_ULR}/weather?q=Belgrade&appid=${WEATHER_API_KEY}&units=metric`
+        axios.get(apiUrl)
+            .then(response => {
+                let weather_icon = ''
+                switch (response.data.weather[0].main) {
+                    case 'Clouds': {
+                        weather_icon = <TiWeatherCloudy />
+                        break;
+                    }
+                    case 'Clear': {
+                        weather_icon = <LuSunDim />
+                        break;
+                    }
+                    case 'Rain': {
+                        weather_icon = <IoRainyOutline />
+                        break;
+                    }
+                    case 'Drizzle': {
+                        weather_icon = <BsCloudDrizzle />
+                        break;
+                    }
+                    case 'Mist': {
+                        weather_icon = <RiMistLine />
+                        break;
+                    }
+                    default: {
+                        weather_icon = <IoPartlySunnyOutline />
+                    }
+                }
+                setData({
+                    ...data, temperature: response.data.main.temp, location: response.data.name,
+                    feels_like: response.data.main.feels_like, temp_min: response.data.main.temp_min,
+                    wind: response.data.wind.speed, humidity: response.data.main.humidity,
+                    icon: weather_icon
+                })
+            })
+            .catch(err => console.log(err))
+    }, [])
 
     const handleSearch = () => {
         if (input !== '') {
-            const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${input}&appid=e282be315ce3a6e650571346667fd1cd&units=metric`
+            const apiUrl = `${WEATHER_API_ULR}/weather?q=${input}&appid=${WEATHER_API_KEY}&units=metric`
             axios.get(apiUrl)
                 .then(response => {
                     let weather_icon = ''
@@ -63,8 +109,24 @@ const Weather = () => {
                         icon: weather_icon
                     })
                 })
-                .catch(err => console.log(err))
+                .catch(err => {
+                    if (err.response.status === 404) {
+                        setInput("Invalid input")
+                        setBorder(border => border = '1px solid red')
+                        setColor(color => color = 'red')
+                    } else {
+                        setInput(input)
+                    }
+                })
+            setShowButton(showButton => showButton = 'block')
         }
+    }
+
+    const clearSearch = () => {
+        setInput('')
+        setShowButton(showButton => showButton = 'none')
+        setBorder(border => border = 'none')
+        setColor(color => color = 'black')
     }
 
     return (
@@ -75,10 +137,12 @@ const Weather = () => {
                     <div className="weather__search">
                         <input
                             type="text"
+                            style={{ border: border, color: color }}
                             value={input}
                             onChange={(e) => setInput(e.target.value)}
                             placeholder='Search'
                         />
+                        <button onClick={clearSearch} style={{ display: showButton }}><MdClear /></button>
                         <button onClick={handleSearch}>
                             <BiSearchAlt2 />
                         </button>
