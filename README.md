@@ -3,11 +3,12 @@
 Welcome to the React Weather App! This application allows users to check the current weather conditions for a specific location.
 
 ## Table of Contents
--[Featrures]
--[Installation]
--[Configuration]
--[Dependencies]
--[Lessons Learned]
+- [Demo](#demo)
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
 
 ## Features
 - Real-time Weather Data: Fetches and displays up-to-date weather information
