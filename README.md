@@ -3,12 +3,11 @@
 Welcome to the React Weather App! This application allows users to check the current weather conditions for a specific location.
 
 ## Table of Contents
-- [Demo](#demo)
 - [Features](#features)
 - [Installation](#installation)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
+- [Configuration](#contributing)
+- [Dependencies](#license)
+- [Leassons Learned](#license)
 
 ## Features
 - Real-time Weather Data: Fetches and displays up-to-date weather information
@@ -17,7 +16,7 @@ Welcome to the React Weather App! This application allows users to check the cur
 
 ## Installation 
 1.  Clone the repository:
-   ```bach
+   ```bash
     git clone https://github.com/Jansrd/WeatherApp.git
 2. Navigate to the project directory:
   cd WeatherApp
