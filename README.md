@@ -18,14 +18,16 @@ Welcome to the React Weather App! This application allows users to check the cur
 
 ## Installation 
 
-1.  Clone the repository:
-    git clone https://github.com/Jansrd/WeatherApp.git
-2. Navigate to the project directory:
-  cd WeatherApp
-3. npm install
-4. API key:
-  Obtain an API key from a weather data provider (e.g., OpenWeatherMap)
-5. npm start
+  Follow these steps to set up and run MovieApp on your local machine:
+  
+    1.  Clone the repository:
+        git clone https://github.com/Jansrd/WeatherApp.git
+    2. Navigate to the project directory:
+      cd WeatherApp
+    3. npm install
+    4. API key:
+      Obtain an API key from a weather data provider (e.g., OpenWeatherMap)
+    5. npm start
    
 
 ## Configuration
