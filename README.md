@@ -20,7 +20,7 @@ Welcome to the React Weather App! This application allows users to check the cur
 
   Follow these steps to set up and run MovieApp on your local machine:
   
-    1.  Clone the repository:
+    1. Clone the repository:
         git clone https://github.com/Jansrd/WeatherApp.git
     2. Navigate to the project directory:
       cd WeatherApp
