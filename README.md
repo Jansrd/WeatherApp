@@ -5,9 +5,9 @@ Welcome to the React Weather App! This application allows users to check the cur
 ## Table of Contents
 - [Features](#features)
 - [Installation](#installation)
-- [Configuration](#contributing)
-- [Dependencies](#license)
-- [Leassons Learned](#license)
+- [Configuration](#configuration)
+- [Dependencies](#dependencies)
+- [Leassons Learned](#lessonlearned)
 
 ## Features
 - Real-time Weather Data: Fetches and displays up-to-date weather information
