@@ -7,7 +7,7 @@ Welcome to the React Weather App! This application allows users to check the cur
 - [Installation](#installation)
 - [Configuration](#configuration)
 - [Dependencies](#dependencies)
-- [Lessons Learned](#lessons)
+- [Lessons Learned](#lessonslearned)
 
 ## Features
 
