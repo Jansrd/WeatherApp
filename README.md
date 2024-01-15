@@ -10,13 +10,15 @@ Welcome to the React Weather App! This application allows users to check the cur
 - [Leassons Learned](#lesson)
 
 ## Features
+
 - Real-time Weather Data: Fetches and displays up-to-date weather information
 - Location Search: Allows users to search for weather conditions in different locatrions
 - Responsive Design: Ensures a seamless excperience across various devices
+  
 
 ## Installation 
+
 1.  Clone the repository:
-   ```bash
     git clone https://github.com/Jansrd/WeatherApp.git
 2. Navigate to the project directory:
   cd WeatherApp
@@ -24,14 +26,19 @@ Welcome to the React Weather App! This application allows users to check the cur
 4. API key:
   Obtain an API key from a weather data provider (e.g., OpenWeatherMap)
 5. npm start
+   
 
 ## Configuration
+
 API key: Replace "WEATHER_API_KEY" in the `src/api.js` file with your OpenWeatherMap API key
 
+
 ## Dependencies
+
 - React: https://reactjs.org/
 - Axios: https://axios-http.com/
 - React-icons: https://www.npmjs.com/package/react-icons
+  
 
 ## Lessons Learned
 Working on this project I learned valuable lessons in:
