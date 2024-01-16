@@ -23,7 +23,7 @@ Welcome to the React Weather App! This application allows users to check the cur
     1. Clone the repository:
         git clone https://github.com/Jansrd/WeatherApp.git
     2. Navigate to the project directory:
-      cd WeatherApp
+        cd WeatherApp
     3. npm install
     4. API key:
       Obtain an API key from a weather data provider (e.g., OpenWeatherMap)
